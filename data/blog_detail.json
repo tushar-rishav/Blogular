@@ -38,5 +38,10 @@
 		"title": "Functional programming in Python",
 		"exerpt": "This is real python!",
 		"content": "Yet to write"
+	},
+	{
+		"title": "Bit manipulation",
+		"exerpt": "Feel its power!",
+		"content": "Yet to write"
 	}
 ]
