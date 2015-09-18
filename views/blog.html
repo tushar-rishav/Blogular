@@ -1,23 +1,25 @@
-<div class="form-group">	
-	<input ng-model="q" type="text" placeholder="Search blogs" class="search"/>
+<div >
+	<div class="form-group">	
+		<input ng-model="q" type="text" placeholder="Search blogs" class="search"/>
+	</div>
+	<h4>Total {{filteredPosts}} blogs</h4>
+	<article ng-repeat="post in filteredPosts | filter:q ">
+		<h1 >
+			<a class="title" href="#/post/{{ posts.indexOf(post) }}">{{ post.title }}</a>
+		</h1>
+		<p>{{ post.exerpt }}</p>
+		<a ng-class="link" href="#/post/{{ posts.indexOf(post) }}">Read more &rarr;</a>
+	</article>
+	<pagination 
+	      total-items="posts.length" 
+	      ng-model="currentPage" 
+	      max-size="maxSize" 
+	      class="pagination-sm" 
+	      boundary-links="true"
+	      direction-links="true"
+	      previous-text="Previous blog"
+	      next-text="Next blog"
+	      ng-change="pageChanged()"
+	      >
+	</pagination>
 </div>
-<h4>Total {{filteredPosts}} blogs</h4>
-<article ng-repeat="post in filteredPosts | filter:q ">
-	<h1 >
-		<a class="title" href="#/post/{{ posts.indexOf(post) }}">{{ post.title }}</a>
-	</h1>
-	<p>{{ post.exerpt }}</p>
-	<a ng-class="link" href="#/post/{{ posts.indexOf(post) }}">Read more &rarr;</a>
-</article>
-<pagination 
-      total-items="posts.length" 
-      ng-model="currentPage" 
-      max-size="maxSize" 
-      class="pagination-sm" 
-      boundary-links="true"
-      direction-links="true"
-      previous-text="Previous blog"
-      next-text="Next blog"
-      ng-change="pageChanged()"
-      >
-</pagination>
