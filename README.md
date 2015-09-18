@@ -8,4 +8,5 @@ cd Blogular
 python -m SimpleHTTPServer <port-number>
 ```
 
-Document shall be updated soon.  
+### Usage
+Populate `data/blog_detail.json` file with the content of your article. That's it! Yup, now you are ready to serve your dishes my friend! :smile:
